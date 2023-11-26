@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/bootstrap/css/bootstrap.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="shortcut icon"
+      href="{% static '/images/favicon.ico' %}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/fonts/iconic/css/material-design-iconic-font.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/animate/animate.css' %}"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'images/favicon1.ico' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/bootstrap/css/bootstrap.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/fonts/iconic/css/material-design-iconic-font.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/static/login/vendor/animate/animate.css' %}"
+    />
+
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/css-hamburgers/hamburgers.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/animsition/css/animsition.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/select2/select2.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/daterangepicker/daterangepicker.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/css/util.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/css/main.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/css-hamburgers/hamburgers.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/animsition/css/animsition.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/select2/select2.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/daterangepicker/daterangepicker.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/css/util.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/css/main.css' %}"
+    />
+    <!--===============================================================================================-->
+
+    <style>
+      .stop-button-container {
+          display: flex;
+          justify-content: center;
+        }
+
+        .stop-button {
+          background-color: #e74c3c;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          padding: 10px 20px;
+          font-size: 18px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        }
+
+        .stop-button:hover {
+          background-color: #c0392b;
+        }
+
+        #battery {
+          box-sizing: content-box;
+          height: 10em;
+          width: 5.8em;
+          border: 0.3em solid #989898;
+          margin: auto;
+          border-radius: 0.6em;
+          position: relative;
+          display: grid;
+          place-items: center;
+        }
+        #battery:before {
+          resize: auto;
+          position: absolute;
+          content: "";
+          height: 0.7em;
+          width: 2.5em;
+          background-color: #989898;
+          margin: auto;
+          top: -13px;
+          bottom: 289px;
+          right: 0;
+          left: 0;
+          border-radius: 0.3em 0.3em 0 0;
+        }
+        #charge {
+          position: absolute;
+          height: 0;
+          width: 5.55em;
+          background-color: #06d46d;
+          top: auto;
+          left: 0.13em;
+          right: 0;
+          bottom: 1px;
+          border-radius: 0.3em 0.3em 0.3em 0.3em;
+        }
+        #charge-level {
+          position: absolute;
+          font-size: 2em;
+          font-weight: 500;
+        }
+        #charging-time {
+          text-align: center;
+          font-size: 1.5em;
+          margin-top: 1.4em;
+        }
+        .active {
+          animation: charge-animation 3s infinite linear;
+        }
+        @keyframes charge-animation {
+          0% {
+            height: 0;
+          }
+          100% {
+            height: 9em;
+
+          }
+        }
+
+          .flogo {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+          }
+
+          .btn-group-lg>.btn, .btn-lg {
+            padding: 0.5rem 1rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            border-radius: 20.3rem;
+        }
+
+
+          .wrapper{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .head{
+                height: 17px;
+                width: 50px;
+                background: #989898;
+                position: absolute;
+                left: 43.5%;
+                top: -10%;
+                border-radius: 54% 46% 0% 100%  / 100% 94% 6% 0%;
+            }
+            .charger{
+                position: relative;
+                top:0;
+                left:0;
+                width:120px;
+                height:200px;
+                background: #fff;
+                border: 3px solid #989898;
+                border-radius: 20px;
+            }
+            .box{
+              left: 3px;
+              width: 109px;
+              height: 191px;
+              background: #fff;
+              border-radius: 14px;
+              position: relative;
+              overflow: hidden;
+              transform: rotate(180deg);
+            }
+            .wave{
+                opacity: 0.6;
+                position: absolute;
+                bottom:36%;
+                left: 40%;
+                background: linear-gradient(to right, #37b337, #a9fba9);
+                width: 500px;
+                height: 500px;
+                transform-origin: 50%, 48%;
+                border-radius: 40%;
+                margin-left: -250px;
+                margin-top: 250px;
+                animation: 5000ms linear infinite reverse drift;
+                {% comment %} animation-name: wave;
+                animation-duration: 2s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite; {% endcomment %}
+            }
+            .wave-three{
+                animation: 5000ms linear infinite drift;
+                opacity: 0.5;
+            }
+            .wave-two{
+                animation: 7000ms linear infinite backwards drift;
+                opacity: .4;
+            }
+            .shade{
+                width: 11px;
+                height: 40px;
+                background: #a9fba9;
+                border-radius: 25px;
+                position: relative;
+                left: 82%;
+                top: 10%;
+            }
+
+
+          .title{
+            position: absolute;
+            bottom: 45%;
+            transform: rotate(180deg);
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 15px;
+        }
+        @keyframes drift{
+            from{transform: rotate(0deg);}
+            to{transform: rotate(360deg);}
+        }
+        @keyframes wave {
+          0% {
+            transform: translate(0, 0);
+          }
+          50% {
+            transform: translate(0, 50px);
+          }
+          100% {
+            transform: translate(0, 0);
+          }
+
+        @keyframes sideways{
+            0% {margin-left: 0px;}
+            100%{margin-left: 50px;}
+        }
+    </style>
+
+    <title>Stop</title>
+  </head>
+  <body>
+    {% comment %}
+    <nav class="navbar navbar-light" style="background-color: #06d46d">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <!-- add your logo image here -->
+          <img
+            src="{% static 'img/logo.png' %}"
+            alt="Company Logo"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top"
+          />
+          <!-- add your company name here -->
+          EVC Global
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{% url 'home' %}"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Charger</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">EVC Wallet</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+          </ul>
+          <a class="btn btn-danger" href="{% url 'login' %}" role="button"
+            >Logout</a
+          >
+        </div>
+      </div>
+    </nav>
+    {% endcomment %}
+
+    <div class="limiter">
+      <div
+        class="container-login100"
+        style="
+          background-image: url('{% static 'images/bg-01.jpg' %}');
+          background-color: #06d46d;
+        "
+      >
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+          <img
+            src="{% static 'images/Logo_Green.png' %}"
+            class="flogo"
+            alt=""
+          />
+          <br />
+
+          {% comment %}
+          <div id="battery">
+            <div id="charge"></div>
+            <div id="charge-level"></div>
+          </div>
+          <div id="charging-time"></div>
+          {% endcomment %}
+
+          <div class="wrapper">
+            <div class="head"></div>
+            <div class="charger">
+              <div class="box">
+                <div class="wave wave-one"></div>
+                <div class="wave wave-two"></div>
+                <div class="wave wave-three"></div>
+                <div class="shade"></div>
+                <div class="title">Charging...</div>
+              </div>
+            </div>
+          </div>
+
+          <br />
+
+          <div class="card rounded">
+            <div class="card-body">
+              {% comment %}
+              <p class="card-text text-center">
+                Status: <strong class="text-success">Available</strong>
+              </p>
+              {% endcomment %}
+
+              <p class="card-text text-center">
+                Price: <strong class="text-success">{{change_amount}} / kWh</strong>
+              </p>
+              <p class="card-text text-center">
+                {% comment %} Consumed Units:
+                <strong class="text-success">0.0 kWh</strong> {% endcomment %}
+                Total Time:
+                <strong class="text-success">{{time}} milliseconds</strong>
+              </p>
+              {% comment %} <p class="card-text text-center">
+                Time Remaining: <strong class="text-success">00:00</strong>
+              </p> {% endcomment %}
+            </div>
+          </div>
+
+          <br />
+
+          <p class="text-center">
+            
+"In Emergency,<strong> Press EMERGENCY STOP.</strong> Otherwise, charging will stop when desired amount reached."
+          </p>
+          <br />
+
+          <form action="{% url 'trigger-remote-stop' %}" method="post">
+            {% csrf_token %}
+            <div class="text-center">
+              {% comment %}
+              <a
+                class="btn btn-primary bg-success btn-lg"
+                href="{% url 'stop' %}"
+                role="button"
+                >Start Charger</a
+              >
+              {% endcomment %}
+              <input
+                class="btn btn-danger btn-lg"
+                type="submit"
+                value="⚠️ Emergency Stop"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    {% comment %}
+    <script>
+      const chargeLevel = document.getElementById("charge-level");
+      const charge = document.getElementById("charge");
+      const chargingTimeRef = document.getElementById("charging-time");
+
+      window.onload = () => {
+        //For browsers that don't support the battery status API
+        if (!navigator.getBattery) {
+          alert("Battery Status Api Is Not Supported In Your Browser");
+          return false;
+        }
+      };
+
+      navigator.getBattery().then((battery) => {
+        function updateAllBatteryInfo() {
+          updateChargingInfo();
+          updateLevelInfo();
+        }
+        updateAllBatteryInfo();
+
+        //When the charging status changes
+        battery.addEventListener("chargingchange", () => {
+          updateAllBatteryInfo();
+        });
+
+        //When the Battery Levvel Changes
+        battery.addEventListener("levelchange", () => {
+          updateAllBatteryInfo();
+        });
+
+        function updateChargingInfo() {
+          if (battery.charging) {
+            charge.classList.add("active");
+            chargingTimeRef.innerText = "";
+          } else {
+            charge.classList.remove("active");
+
+            //Display time left to discharge only when it is a integer value i.e not infinity
+            if (parseInt(battery.dischargingTime)) {
+              let hr = parseInt(battery.dischargingTime / 3600);
+              let min = parseInt(battery.dischargingTime / 60 - hr * 60);
+              chargingTimeRef.innerText = `${hr}hr ${min}mins remaining`;
+            }
+          }
+        }
+
+        //Updating battery level
+        function updateLevelInfo() {
+          let batteryLevel = `${parseInt(battery.level * 100)}%`;
+          charge.style.height = batteryLevel;
+          chargeLevel.textContent = batteryLevel;
+        }
+      });
+    </script>
+    {% endcomment %} {{ time|json_script:"mydata" }}
+
+    <script>
+      var myValue = JSON.parse(document.getElementById("mydata").textContent);
+      console.log(myValue);
+      setTimeout(function () {
+        window.location.href = "trigger-remote-stop";
+      }, myValue);
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <!--===============================================================================================-->
+    <script src="static/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="static/login/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="static/login/vendor/bootstrap/js/popper.js"></script>
+    <script src="static/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="static/login/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="static/login/vendor/daterangepicker/moment.min.js"></script>
+    <script src="static/login/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="static/login/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="static/login/js/main.js"></script>
+  </body>
+</html>

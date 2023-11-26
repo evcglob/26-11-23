@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <title>Add Money</title>
+      <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/bootstrap/css/bootstrap.min.css' %}">
+      <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+      <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'login/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+      <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/animate/animate.css' %}">
+    
+        <link rel="icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
+      <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/bootstrap/css/bootstrap.min.css' %}">
+      <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+      <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'login/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+      <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'login/static/login/vendor/animate/animate.css' %}">
+    
+      <!--===============================================================================================-->	
+        <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/css-hamburgers/hamburgers.min.css' %}">
+      <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/animsition/css/animsition.min.css' %}">
+      <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/select2/select2.min.css' %}">
+      <!--===============================================================================================-->	
+        <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/daterangepicker/daterangepicker.css' %}">
+      <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'login/css/util.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'login/css/main.css' %}">
+      <!--===============================================================================================-->	
+        <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/css-hamburgers/hamburgers.min.css' %}">
+      <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/animsition/css/animsition.min.css' %}">
+      <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/select2/select2.min.css' %}">
+      <!--===============================================================================================-->	
+        <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/daterangepicker/daterangepicker.css' %}">
+      <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'login/css/util.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'login/css/main.css' %}">
+      <!--===============================================================================================-->
+    
+      <style>
+        .flogo {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto;
+          }
+
+          .moneyvalue {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+          }
+          
+          .button-container {
+            display: block;
+            margin-bottom: 10px;
+
+          }
+          
+          .btn {
+            background-color: #06d46d;
+            color: white;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+          }
+          
+          .btn:hover {
+            background-color: #05a15b;
+          }
+          
+          .moneyvalue button {
+            margin-left: 20px;
+            margin-right: 20px;
+          }
+
+
+          .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom:10px;
+          }
+    
+          .button-container .btn {
+            flex: 1 1 calc(33.33% - 10px);
+            max-width: calc(33.33% - 10px);
+          } 
+          
+      </style>
+    
+    </head>
+    
+    <body>
+      <div class="limiter">
+        <div class="container-login100" style="background-image: url('{% static 'images/bg-01.jpg' %}'); background-color: #06d46d;">
+                <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+          <img src="{% static 'images/Logo_Green.png' %}" class="flogo" alt="">
+          <br>
+                    
+        <form class="login100-form validate-form" method="post" action="{% url 'razorpayment' %}">
+          {% csrf_token %}
+            <span class="login100-form-title p-b-49">
+                            Add Amount to <br> EVC Wallet
+            </span>
+              {% comment %} 1 {% endcomment %}
+                        <div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+                            <span class="label-input100">Name</span>
+                            <input class="input100" type="text" placeholder="Enter your name" name="name" id="name">
+                            <span class="focus-input100" data-symbol="&#xf206;"></span>
+                        </div>
+              {% comment %} 2 {% endcomment %}
+                        <div class="wrap-input100 validate-input m-b-23" data-validate="Password is required">
+                            <span class="label-input100">Amount</span>
+                            <input class="input100" type="number" placeholder="Enter Amount" name="amount" id="amountInput" required>
+                            <span class="focus-input100" data-symbol="&#x20B9;"></span>
+                        </div>   
+                        <br> 
+                      
+                        <div class="moneyvalue">
+                          <div class="button-container">
+                            <button
+                              type="button"
+                              class="btn"
+                              value="200"
+                              onclick="setAmount(this)"
+                            >
+                              200
+                            </button>
+                            <button
+                              type="button"
+                              class="btn"
+                              value="300"
+                              onclick="setAmount(this)"
+                            >
+                              300
+                            </button>
+                            <button
+                              type="button"
+                              class="btn"
+                              value="400"
+                              onclick="setAmount(this)"
+                            >
+                              400
+                            </button>
+                          </div>
+                          <div class="button-container">
+                            <button
+                              type="button"
+                              class="btn"
+                              value="500"
+                              onclick="setAmount(this)"
+                            >
+                              500
+                            </button>
+                            <button
+                              type="button"
+                              class="btn"
+                              value="600"
+                              onclick="setAmount(this)"
+                            >
+                              600
+                            </button>
+                            <button
+                              type="button"
+                              class="btn"
+                              value="700"
+                              onclick="setAmount(this)"
+                            >
+                              700
+                            </button>
+                          </div>
+                        </div>
+
+    
+    
+                        <div class="text-right p-t-8 p-b-31">
+                            <a href="#">
+                                {% comment %} Forgot password? {% endcomment %}
+                            </a>
+                        </div>
+                        
+                        <div class="container-login100-form-btn">
+                            <div class="wrap-login100-form-btn">
+                                <div class="login100-form-bgbtn"></div>
+                              
+                                <button id="rzp-button1" class="login100-form-btn">
+                                    Proceed
+                                </button>
+                                
+                            </div>
+                        </div>
+            </div>
+    
+                    </form>
+    
+                  </div>
+            </div>
+        </div>
+
+        <script>
+          function setAmount(button) {
+              document.getElementById("amountInput").value = button.value;
+          }
+      </script>
+
+{% if order is not None %}
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+      var origin = window.location.origin;
+      console.log("{{ name }}");
+      var options = {
+          "key": "rzp_test_Hq5PGGGXL04xp4",
+          //"key": "rzp_live_XSRZsaKtueOJbw",
+          "name": "EVC Global", 
+          "description": "Payment Gateway",
+          "image": "https://www.evcglobal.in/assets/img/splash.png",
+          "order_id": "{{orderid}}",
+         // "callback_url": "http://127.0.0.1:8000/razorpayhandler",
+
+          "callback_url": origin + "/razorpayhandler",
+          "prefill": {
+              "email": "{{name}}"
+          },
+          "theme": {
+              "color": "#06d46d"
+          }
+      };
+      var rzp1 = new Razorpay(options);
+          rzp1.open(); 
+              
+      </script>
+      {% endif %}
+    </body>
+</html>

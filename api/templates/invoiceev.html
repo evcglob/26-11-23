@@ -1,0 +1,42 @@
+<html>
+    <body>
+
+
+
+
+
+      <h1>Electric Vehicle Charging Invoice</h1>
+      <p>Customer Name: {{ customer_name }}</p>
+      <p>Charging Date: {{ charging_date }}</p>
+      <p>Charging Duration (hours): {{ charging_duration }}</p>
+      <p>Charging Rate (per hour): ${{ charging_rate }}</p>
+      <p>Total Cost: ₹{{ total_cost_inr }}</p>
+
+  
+
+
+
+
+  <script>
+    function generateInvoice() {
+      // Get form values
+      const customerName = document.getElementById('customer_name').value;
+      const vehicleType = document.getElementById('vehicle_type').value;
+      const chargingStartTime = document.getElementById('charging_start_time').value;
+      const chargingEndTime = document.getElementById('charging_end_time').value;
+      const chargingRate = document.getElementById('charging_rate').value;
+
+      // Calculate charging cost
+      const duration = Math.abs(new Date(chargingEndTime) - new Date(chargingStartTime));
+      const hours = Math.ceil(duration / (1000 * 60 * 60));
+      const chargingCost = hours * chargingRate;
+
+      // Redirect to invoice page with parameters
+      const url = `/invoice/?customer_name=${customerName}&vehicle_type=${vehicleType}&charging_start_time=${chargingStartTime}&charging_end_time=${chargingEndTime}&charging_rate=${chargingRate}&charging_cost=${chargingCost}`;
+      window.location.href = url;
+    }
+  </script>
+
+
+    </body>
+</html>

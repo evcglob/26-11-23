@@ -1,0 +1,293 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/animate/animate.css' %}">
+
+    <link rel="icon" type="image/png" href="{% static 'images/favicon1.ico' %}"/>
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/static/login/vendor/animate/animate.css' %}">
+
+  <!--===============================================================================================-->	
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/css-hamburgers/hamburgers.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/animsition/css/animsition.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/select2/select2.min.css' %}">
+  <!--===============================================================================================-->	
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/daterangepicker/daterangepicker.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'login/css/main.css' %}">
+  <!--===============================================================================================-->	
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/css-hamburgers/hamburgers.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/animsition/css/animsition.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/select2/select2.min.css' %}">
+  <!--===============================================================================================-->	
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/daterangepicker/daterangepicker.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'login/css/main.css' %}">
+  <!--===============================================================================================-->
+
+
+
+    <title>Invoice</title>
+    <style>
+      /* Add your own custom styles here */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table td,
+      table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      table th {
+        background-color: #f2f2f2;
+      }
+
+      .invoice-header {
+        display: absolute;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .invoice-header h1 {
+        font-size: 36px;
+        margin: 0;
+      }
+
+      .invoice-header p {
+        font-size: 18px;
+        margin: 0;
+      }
+
+      .invoice-footer {
+        display: absolute;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+      }
+
+      .invoice-footer p {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .flogo {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        }
+    </style>
+  </head>
+
+  <body>
+    {% comment %} <nav class="navbar navbar-light" style="background-color: #06d46d">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <!-- add your logo image here -->
+          <img
+            src="{% static 'img/logo.png' %}"
+            alt="Company Logo"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top"
+          />
+          <!-- add your company name here -->
+          EVC Global
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Charger</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">EVC Wallet</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+          </ul>
+          <a class="btn btn-danger" href="{% url 'login' %}" role="button">Logout</a>
+        </div>
+      </div>
+    </nav> {% endcomment %}
+
+    <div class="limiter">
+      <div class="container-login100" style="background-image: url('{% static 'images/bg-01.jpg' %}'); background-color: #06d46d;">
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+        <img src="{% static 'images/Logo_Green.png' %}" class="flogo" alt="">
+        <br>
+          
+    
+<form action="">
+  <h3>Successful Charging</h3>
+  <p>Your charging is completed.</p>
+
+
+</form>
+
+    <div class="invoice-header">
+
+      <p>Date: <span id="date"></span></p>
+    </div>
+
+
+    <h3>Electric Vehicle Charging Invoice</h3>
+    <p>Customer Name: {{ customer_name }}</p>
+    <p>Charging Duration (hours): {{ charging_duration }}</p>
+    <p>Charging Rate (per hour): ${{ charging_rate }}</p>
+    <p>Total Cost: ₹{{ total_cost_inr }}</p>
+
+
+    <table>**
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="items-table">
+        <!-- Populate table rows with backend data using JavaScript -->
+      </tbody>
+    </table>
+    <div class="invoice-footer">
+      <p>Total: ₹<span id="total"></span></p>
+      <button type="button" class="btn btn-success" id="print-button" onclick="window.print()">Download PDF</button>
+      <a href="path/to/invoice.pdf" download class="btn btn-success">Print</a>
+		</div>
+    </div>
+<br>
+<br>
+<br>
+    <div class="form-group text-center">
+    <a class="btn btn-primary bg-success btn-lg" href="{% url 'rating' %}" role="button">Review our Charger</a>
+    </div>
+
+
+
+
+    <script>
+      // Retrieve backend data and populate the invoice
+      // This code assumes that you have retrieved an array of items
+      // Each item should have the following properties: name, description, quantity, price
+      const items = [
+        {
+          name: "Item 1",
+          description: "This is a description of Item 1",
+          quantity: 2,
+          price: 50,
+        },
+        {
+          name: "Item 2",
+          description: "This is a description of Item 2",
+          quantity: 1,
+          price: 5,
+        },
+      ];
+      const itemsTable = document.getElementById("items-table");
+      const totalElement = document.getElementById("total");
+      let total = 0;
+      items.forEach((item) => {
+        const row = itemsTable.insertRow();
+        const nameCell = row.insertCell();
+        const descriptionCell = row.insertCell();
+        const quantityCell = row.insertCell();
+        const priceCell = row.insertCell();
+        const totalCell = row.insertCell();
+        nameCell.innerHTML = item.name;
+        descriptionCell.innerHTML = item.description;
+        quantityCell.innerHTML = item.quantity;
+        priceCell.innerHTML = `₹${item.price}`;
+        const itemTotal = item.quantity * item.price;
+        totalCell.innerHTML = `₹${itemTotal}`;
+        total += itemTotal;
+      });
+      totalElement.innerHTML = total.toFixed(2);
+      const dateElement = document.getElementById("date");
+      const now = new Date();
+      dateElement.innerHTML = now.toLocaleDateString();
+    </script>
+
+
+  
+
+
+
+
+
+
+
+
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+ 
+<!--===============================================================================================-->
+<script src="static/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/login/vendor/bootstrap/js/popper.js"></script>
+	<script src="static/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/login/vendor/daterangepicker/moment.min.js"></script>
+	<script src="static/login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="static/login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="static/login/js/main.js"></script>
+
+
+
+
+</body>
+
+</html>

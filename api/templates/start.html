@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/bootstrap/css/bootstrap.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/fonts/iconic/css/material-design-iconic-font.min.css' %}"
+    />
+    <link rel="shortcut icon" href="{% static '/images/favicon.ico' %}" type="image/x-icon">
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/animate/animate.css' %}"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'images/favicon1.ico' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/bootstrap/css/bootstrap.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/fonts/iconic/css/material-design-iconic-font.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/static/login/vendor/animate/animate.css' %}"
+    />
+
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/css-hamburgers/hamburgers.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/animsition/css/animsition.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/select2/select2.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/daterangepicker/daterangepicker.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/css/util.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/css/main.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/css-hamburgers/hamburgers.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/animsition/css/animsition.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/select2/select2.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/vendor/daterangepicker/daterangepicker.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/css/util.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'login/css/main.css' %}"
+    />
+    <!--===============================================================================================-->
+
+    <title>Estimate</title>
+
+    <style>
+      .form-check-label {
+        margin-left: 10px;
+      }
+
+      .form-check-input:checked + .form-check-label::before {
+        background-color: #0d6efd;
+      }
+
+      .form-check-input:focus + .form-check-label::before {
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+      }
+
+      .rounded-rectangle {
+        width: 350px;
+        height: 80px;
+        border-radius: 50px;
+        background-color: #ccc;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .circle {
+        width: 100px;
+        height: 80px;
+        border-radius: 50px;
+        background-color: #06d46d;
+        position: absolute;
+        left: 1px;
+        top: 0px;
+        cursor: move;
+      }
+
+      .circle::after {
+        content: "";
+        position: absolute;
+        width: 0px;
+        height: 0;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid white;
+        right: 35px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .flogo {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      
+      .header {
+        height: 30%;
+        background-color: #06d46d;
+        border-radius: 40px;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+      }
+
+      
+      .header-summary {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Montserrat', sans-serif;
+        color: white;
+        z-index: 3;
+      }
+      
+      .summary-text {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-bottom: 0.5rem;
+        margin-left: 1.5rem;
+        margin-top: 1.5rem;
+      }
+      
+      .summary-balance {
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 0.8rem;
+        margin-left: 1.5rem;
+        
+      }
+      
+      .summary-text-2 {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+      }
+
+      .moneyvalue {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      
+      .button-container {
+        display: block;
+        margin-bottom: 10px;
+
+      }
+      
+      .btn {
+        background-color: #06d46d;
+        color: white;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        padding: 10px 20px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      .btn:hover {
+        background-color: #05a15b;
+      }
+      
+      .moneyvalue button {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+
+      .moneybtn{  
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .addmoney-btn {
+        font-family: Poppins-Medium;
+        font-size: 16px;
+        color: #06d46d;
+        line-height: 1.2;
+        text-transform: uppercase;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        width: 100%;
+        height: 50px;
+        background: #fff;
+    }
+
+
+
+    .estimate-bill h2 {
+      margin-bottom: 10px;
+    }
+    
+    .estimate-bill .service {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+    
+    .estimate-bill .service span:first-child {
+      width: 170px;
+    }
+    
+    .estimate-bill .total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    
+    .estimate-bill .total span:first-child {
+      width: 150px;
+    }
+    
+    .estimate-bill .service:last-child {
+      border-bottom: none;
+    }
+
+    .charging-info {
+      display: flex;
+      align-items: center;
+    }
+    
+    .charging-info img {
+      margin-right: 10px;
+    }
+    
+    
+
+
+    </style>
+  </head>
+
+  <body>
+
+    <script>
+      {% if toast_message %}
+      Toastify({
+        text: "{{ toast_message }}",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "center",
+        stopOnFocus: true,
+        style: {
+            background: "#fff",
+        },
+        onClick: function(){} // Callback after click
+    }).showToast();
+      {% endif %}
+      </script>
+    {% comment %}
+    <nav class="navbar navbar-light" style="background-color: #06d46d">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <!-- add your logo image here -->
+          <img
+            src="{% static 'img/logo.png' %}"
+            alt="Company Logo"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top"
+          />
+          <!-- add your company name here -->
+          EVC Global
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'home' %}"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Charger</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'view_wallet' %}">EVC Wallet</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+          </ul>
+          <a class="btn btn-danger" href="{% url 'login' %}" role="button"
+            >Logout</a
+          >
+        </div>
+      </div>
+    </nav>
+    {% endcomment %}
+
+    <div class="limiter">
+      <div
+        class="container-login100"
+        style="background-image: url('{% static 'images/bg-01.jpg' %}');background-color: #06d46d;">
+        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+          <br />
+
+
+
+           {% comment %} <div class="header">
+            <div class="header-summary">
+              <div class="summary-text">
+                My Balance
+              </div>
+              <div class="summary-balance">
+                &#8377; 293.00
+
+                <div class="moneybtn">
+                  <div class="wrap-login100-form-btn">
+                    <div class="login100-form-bgbtn"></div>
+                    <button class="addmoney-btn" type="submit" href="/addmoney">Add Money</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  {% endcomment %}
+
+          <br>
+
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-11">
+                <div class="card rounded">
+                  <div class="card-body">
+                    <h4 class="card-text text-center">Charging Info:</h4>
+<br>
+                    <div class="charging-info">
+                      <img src={% static 'img/CCS2.png' %} alt="Small Image" width="80" height="80">
+
+                    <div class="info">
+                    
+                    <p class="card-text text-center">Connector Type: <strong class="text-success"> CCS2</strong></p>
+                    <p class="card-text text-center">Charging Price: <strong class="text-success"> {{change_amount}} / kWh</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+          <br>
+          <br>
+
+
+
+
+          <div class="estimate-bill">
+            <h3>Charging Estimate</h3>
+            <br>
+            <div class="service">
+              <span>Estimated Units:</span>
+              <span>{{KW}} KWh</span>
+            </div>
+            <div class="service">
+              <span>Charging Estimate:</span>
+              <span>₹ {{chrg_amt}}</span>
+            </div>
+            <div class="service">
+              <span>GST(18%):</span>
+              <span>₹ {{gst}}</span>
+            </div>
+            <div class="total">
+              <span>Total:</span>
+              {% comment %} {% if input_value %} {% endcomment %}
+              <p>₹ {{ input_value }}</p>
+              {% comment %} {% endif %} {% endcomment %}
+            </div>
+          </div>
+
+
+<br>
+<br>
+<br>
+{% if message %}
+<div class="alert alert-{{class}}">
+    {{message}}
+</div>
+{% endif %}
+<br>
+<br>
+<br>
+
+
+          <form action="{% url 'trigger-remote-start' %}" method="post">
+            {% csrf_token %}
+            <div class="container-login100-form-btn">
+              <div class="wrap-login100-form-btn">
+                <div class="login100-form-bgbtn"></div>
+                <button id="remote-start-button" class="login100-form-btn" type="submit">
+                  Start Charging
+                </button>
+              </div>
+            </div>
+          </form>
+
+
+
+
+          {% comment %} <div class="wrap-input100 validate-input m-b-23" data-validate="Password is required">
+            <h5 class="">Estimated Units</h5>
+            <input class="input100" type="number" placeholder="Enter Charging Amount" name="amount" id="amountInput" required>
+            <span class="focus-input100" data-symbol="&#x20B9;"></span>
+          </div>    {% endcomment %}
+ 
+
+          {% comment %} demo {% endcomment %}
+
+          {% comment %} <button id="remote-start-button">Remote Start</button> {% endcomment %}
+
+{% comment %} <script>
+document.getElementById('remote-start-button').addEventListener('click', function() {
+    $.ajax({
+        url: '/trigger-remote-start/',
+        method: 'GET',
+        success: function(response) {
+            console.log(response);
+            // Handle the response from the server
+        },
+        error: function(error) {
+            console.log(error);
+            // Handle the error
+        }
+    });
+});
+</script> {% endcomment %}
+
+
+
+          {% comment %} demo end {% endcomment %}
+
+
+
+    <script>
+      function setAmount(button) {
+          document.getElementById("amountInput").value = button.value;
+      }
+  </script>
+
+
+    <script>
+      const circle = document.querySelector(".circle");
+      const rect = document.querySelector(".rounded-rectangle");
+      let isDragging = false;
+      let mouseOffset = { x: 0, y: 0 };
+
+      // Add event listeners for mouse events
+      circle.addEventListener("mousedown", startDragging);
+      document.addEventListener("mousemove", dragCircle);
+      document.addEventListener("mouseup", stopDragging);
+
+      // Add event listeners for touch events
+      circle.addEventListener("touchstart", startDragging);
+      document.addEventListener("touchmove", dragCircle);
+      document.addEventListener("touchend", stopDragging);
+
+      function startDragging(event) {
+        isDragging = true;
+
+        // Get the coordinates of the touch or mouse event
+        const coords = getCoords(event);
+
+        // Get the position of the circle relative to the rectangle
+        const rectBounds = rect.getBoundingClientRect();
+        mouseOffset.x = coords.x - rectBounds.left - circle.offsetLeft;
+        mouseOffset.y = coords.y - rectBounds.top - circle.offsetTop;
+      }
+
+      function dragCircle(event) {
+        if (isDragging) {
+          // Get the coordinates of the touch or mouse event
+          const coords = getCoords(event);
+
+          // Get the position of the circle relative to the rectangle
+          const rectBounds = rect.getBoundingClientRect();
+          const maxX = rectBounds.width - circle.clientWidth;
+          const maxY = rectBounds.height - circle.clientHeight;
+          const newX = coords.x - rectBounds.left - mouseOffset.x;
+          const newY = coords.y - rectBounds.top - mouseOffset.y;
+          circle.style.left = Math.max(0, Math.min(newX, maxX)) + "px";
+          circle.style.top = Math.max(0, Math.min(newY, maxY)) + "px";
+        }
+      }
+
+      function stopDragging() {
+        isDragging = false;
+
+        // Get the position of the circle and the rectangle
+        const circleBounds = circle.getBoundingClientRect();
+        const rectBounds = rect.getBoundingClientRect();
+        const originalX = 1;
+        const originalY = rectBounds.height - circle.clientHeight - 1;
+
+        // Check if the circle is dragged less than half the width of the rectangle
+        if (circleBounds.left - rectBounds.left < rectBounds.width / 1.5) {
+          // Circle is dragged less than half the width of the rectangle
+          // Move it back to its original position
+          circle.style.left = originalX + "px";
+          circle.style.top = originalY + "px";
+        } else {
+          // Circle is dragged more than half the width of the rectangle
+          // Animate the circle to move to the right and then disappear
+          const animationDuration = 500;
+          const animationDelay = 200;
+          circle.animate(
+            [
+              { transform: "translateX(0)", opacity: 1 },
+              { transform: `translateX(${rectBounds.width}px)`, opacity: 0 },
+            ],
+            {
+              duration: animationDuration,
+              delay: animationDelay,
+              fill: "forwards",
+            }
+          );
+
+          // Disable dragging
+          circle.removeEventListener("mousedown", startDragging);
+          document.removeEventListener("mousemove", dragCircle);
+          document.removeEventListener("mouseup", stopDragging);
+          circle.removeEventListener("touchstart", startDragging);
+          document.removeEventListener("touchmove", dragCircle);
+          document.removeEventListener("touchend", stopDragging);
+
+          // Call the onComplete function after the animation is complete
+          //setTimeout(onComplete, animationDuration + animationDelay);
+          setTimeout(() => {
+            window.location.href = "stop";
+          }, 1000);
+        }
+      }
+
+      //function onComplete() {
+      // Replace the circle with a "Fully Charged" text
+      //const swipeText = document.querySelector('.swipe-text');
+      //swipeText.textContent = 'Fully Charged';
+      //circle.style.display = 'none';
+
+      function getCoords(event) {
+        // Check if the event is a touch event or a mouse event
+        if (event.touches && event.touches.length > 0) {
+          // Touch event
+          return { x: event.touches[0].clientX, y: event.touches[0].clientY };
+        } else {
+          // Mouse event
+          return { x: event.clientX, y: event.clientY };
+        }
+      }
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <!--===============================================================================================-->
+    <script src="static/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="static/login/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="static/login/vendor/bootstrap/js/popper.js"></script>
+    <script src="static/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="static/login/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="static/login/vendor/daterangepicker/moment.min.js"></script>
+    <script src="static/login/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="static/login/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="static/login/js/main.js"></script>
+  </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,202 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+
+  <style>
+
+    .flogo {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      }
+      
+    .divider:after,
+    .divider:before {
+    content: "";
+    flex: 1;
+    height: 1.5px;
+    background: #E8E9EB;
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .google-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #E8E9EB;
+      color: #fff;
+      border-radius: 50px;
+      box-shadow: none;
+      border: none;
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      font-size: 15px;
+      padding: 10px 23px;
+      text-decoration: none;
+      width: 219px;
+    }
+    
+    .google-btn:hover {
+      background-color: #06d46d;
+      color: #fff;
+    }
+    
+    .btn-text {
+      margin: 0 0 0 8px;
+      text-align: center;
+      flex: 1;
+    }
+    
+    .google-icon-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+    
+    .google-icon {
+      width: 100%;
+      height: 100%;
+    }
+    
+    
+  </style>
+
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/animate/animate.css' %}">
+
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/static/login/vendor/animate/animate.css' %}">
+
+  <!--===============================================================================================-->	
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/css-hamburgers/hamburgers.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/animsition/css/animsition.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/select2/select2.min.css' %}">
+  <!--===============================================================================================-->	
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/daterangepicker/daterangepicker.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'login/css/main.css' %}">
+  <!--===============================================================================================-->	
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/css-hamburgers/hamburgers.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/animsition/css/animsition.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/select2/select2.min.css' %}">
+  <!--===============================================================================================-->	
+    <link rel="stylesheet" type="text/css" href="{% static 'login/vendor/daterangepicker/daterangepicker.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'login/css/main.css' %}">
+  <!--===============================================================================================-->
+  
+</head>
+
+<body>
+  <div class="limiter">
+		{% comment %} <div class="container-login100" style="background-image: url('static/login/images/bg-01.jpg');"> {% endcomment %}
+    <div class="container-login100" style="background-image: url('static/images/bg-01.jpg'); background-color: #06d46d;">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+      <img src="static/images/Logo_Green.png" class="flogo"alt="">
+      <br>
+
+      {% if message %}
+      <div class="alert alert-{{class}}">
+          {{message}}
+      </div>
+      {% endif %}
+			<form class="login100-form validate-form" method="post">
+          {% csrf_token %}
+
+            <h4 class="text-center">Enter OTP sent to your number {{mobile}}</h4>
+            <br>
+
+
+                <div class="wrap-input100 validate-input m-b-23" data-validate="Password is required">
+                    <span class="label-input100">Enter OTP</span>
+                    <input class="input100" type="text" placeholder="Enter OTP" name="otp" id="" required>
+                    <span class="focus-input100" data-symbol="&#xf190;"></span>
+                </div>
+            
+
+
+				<div class="container-login100-form-btn">
+					<div class="wrap-login100-form-btn">
+						<div class="login100-form-bgbtn"></div>
+						<button class="login100-form-btn" type="submit">
+							Proceed
+						</button>
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<script>
+  var csrftoken = getCookie('csrftoken');
+$.ajax({
+    type: 'POST',
+    url: '/myview/',
+    data: { mydata: 'value' },
+    headers: {
+        'X-CSRFToken': csrftoken
+    },
+    success: function(response) {
+        // handle success response
+    },
+    error: function(response) {
+        // handle error response
+    }
+});
+</script>
+
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+ 
+<!--===============================================================================================-->
+<script src="static/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/login/vendor/bootstrap/js/popper.js"></script>
+	<script src="static/login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="static/login/vendor/daterangepicker/moment.min.js"></script>
+	<script src="static/login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="static/login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="static/login/js/main.js"></script>
+
+</body>
+</html>
